@@ -1,0 +1,26 @@
+﻿body {
+    margin-left:40%;
+    background:pink;
+}
+
+.Fel {
+    color:red;
+}
+
+.Panel {
+    border:4px groove yellow;
+    margin-top:5px;
+    background-color:purple;
+    width:195px;
+    padding-top:3px;
+    margin-top:50px;
+   
+}
+
+h1 {
+    font-style:italic;
+}
+
+p {
+    font-style:oblique;
+}

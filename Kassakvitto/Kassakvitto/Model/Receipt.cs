@@ -31,7 +31,7 @@ namespace Kassakvitto.Model
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ApplicationException();
                 }
             }
         }

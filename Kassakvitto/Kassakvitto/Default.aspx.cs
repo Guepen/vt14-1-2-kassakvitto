@@ -19,7 +19,13 @@ namespace Kassakvitto
         {
             if (IsValid)
             {
-                var receipt = new Receipt(double.Parse(Input.Text)); 
+                Output.Visible = true;
+                var receipt = new Receipt(double.Parse(Input.Text));
+                Total.Text = String.Format("{0:C}", receipt.Subtotal);
+                Discount.Text = String.Format("{0:C}", receipt.MoneyOff);
+                PayValue.Text = String.Format("{0:C}", receipt.Total);
+                DiscountRate.Text = String.Format("{0:P0}", receipt.DiscountRate);
+               
 
             }
         }

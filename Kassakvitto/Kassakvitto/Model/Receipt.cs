@@ -11,19 +11,19 @@ namespace Kassakvitto.Model
 
         public double DiscountRate
         {
-            public get;
+            get;
             private set; 
         }
 
         public double MoneyOff
         {
-            public get;
+            get;
             private set; 
         }
 
         public double Subtotal
         {
-            public get { return _subtotal; }
+            get { return _subtotal; }
             private set {
                 if(value > 0)
                 {
@@ -38,17 +38,43 @@ namespace Kassakvitto.Model
 
         public double Total
         {
-            public get;
+            get;
             private set; 
+        }
+
+        public Receipt(double subtotal)
+        {
+            Calculate(subtotal);
         }
 
         public void Calculate(double subtotal)
         {
             Subtotal = subtotal;
 
+            if (Subtotal < 500)
+            {
+                DiscountRate = 0;
+            }
+
+            else if (Subtotal < 1000)
+            {
+                DiscountRate = 0.05;
+            }
+
+            else if (Subtotal < 5000)
+            {
+                DiscountRate = 0.1;
+            }
+
+            else if (Subtotal >= 5000)
+            {
+                DiscountRate = 0.15;
+            }
+
+            MoneyOff = Subtotal * DiscountRate;
+            Total = Subtotal - MoneyOff;
+
         }
 
-        public Receipt(double subtotal)
-        { }
     }
 }
